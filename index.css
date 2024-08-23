@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa, #fffaf0);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+
+header {
+    background: url('bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 0;
+    height: 350px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff6347;
+}
+
+header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+    color: #ffa07a;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: transform 0.5s ease;
+}
+
+header nav ul li:hover {
+    transform: translateZ(20px);
+}
+
+header nav ul li a {
+    color: #0a6d49;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #f0e68c;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(71, 255, 240, 0.5), rgba(122, 255, 235, 0.5));
+    z-index: 0;
+    animation: gradientAnimation 15s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.content {
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.about, .projects, .skills, .contact {
+    background: rgba(255, 255, 255, 0.9);
+    height: 400px;
+    margin-bottom: 40px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transform: rotateY(15deg);
+    transition: transform 0.5s ease;
+}
+
+.about:hover, .projects:hover, .skills:hover, .contact:hover {
+    transform: rotateY(0deg) translateZ(50px);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+    color: #ff6347;
+}
+
+p, ul li {
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    color: #1cc2a1;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+#projects p, #projects ul li {
+    color: #1cc2a1;
+    font-weight: normal;
+}
+
+.animated-img {
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 150px;
+    opacity: 0.7;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotateZ(0); }
+    50% { transform: translateY(-20px) rotateZ(15deg); }
+    100% { transform: translateY(0) rotateZ(0); }
+}
+
+.contact a {
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #ff6347;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    transform-style: preserve-3d;
+    
+}
+
+.contact a:hover {
+    background-color: #ff6347;
+    color: #fff;
+    transform: rotateX(15deg) translateZ(10px);
+}
+
+#contact p{
+    margin-bottom: 20px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, rgba(255, 99, 71, 0.5), rgba(255, 160, 122, 0.5));
+    transform: rotate(30deg);
+    z-index: 0;
+    animation: gradientAnimation 15s infinite alternate;
+    filter: blur(5px);
+}
